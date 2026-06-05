@@ -72,29 +72,6 @@ The dataset contains the following files:
 | `hour_global_mean` | Global average demand per hour |
 | `geo4_mean` | Average demand per geo_prefix4 region |
 
-### Model Architecture
-┌─────────────────────────────────────────────────────────┐
-│ Feature Engineering │
-│ (Spatial + Temporal + Aggregated = 28 features) │
-└─────────────────────────────────────────────────────────┘
-│
-▼
-┌─────────────────────────────────────────────────────────┐
-│ Ensemble Model │
-│ ┌─────────────┐ ┌─────────────┐ ┌─────────────────┐ │
-│ │ LightGBM │ │Random Forest│ │Gradient Boost │ │
-│ │ (55%) │ │ (25%) │ │ (20%) │ │
-│ └─────────────┘ └─────────────┘ └─────────────────┘ │
-│ │ │
-│ ▼ │
-│ Weighted Average (0.55/0.25/0.20) │
-└─────────────────────────────────────────────────────────┘
-│
-▼
-┌─────────────────────────────────────────────────────────┐
-│ Clip predictions to [0, 1] │
-└─────────────────────────────────────────────────────────┘
-
 ### LightGBM Parameters
 
 {
