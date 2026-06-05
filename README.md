@@ -5,7 +5,7 @@ Traffic Demand Prediction
 [![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3+-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-red.svg)](LICENSE)
 
->**Competition Score: 89.5 / 100** (Optimized version targets 99+)
+>**Competition Score: 89.5 / 100**
 
 ## Problem Statement
 
