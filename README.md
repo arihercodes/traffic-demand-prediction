@@ -90,9 +90,6 @@ The dataset contains the following files:
 ## Prerequisites
 Python 3.14.5
 
-``` pip package manager
-```
-
 ## Installation
 Clone the repository
 
