@@ -101,7 +101,9 @@ cd traffic-demand-prediction
 
 ## Install dependencies
 
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
+
 ```
 ## Place dataset files
 ```
@@ -126,13 +128,6 @@ Option C: Use Jupyter Notebook
 jupyter notebook notebooks/traffic_demand_prediction.ipynb
 ```
 
-## Output
-The script generates submission.csv in the outputs/ folder with the following format:
-
-Index	demand
-0	0.2345
-1	0.6789
-...	...
 
 ## Results
 Model	Train R²	Competition Score
