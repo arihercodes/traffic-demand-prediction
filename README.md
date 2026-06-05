@@ -87,40 +87,6 @@ The dataset contains the following files:
     'min_child_samples': 10
 }
 
-## Repository Structure
-
-traffic-demand-prediction/
-│
-├── data/
-│   ├── train.csv                    # Training dataset
-│   ├── test.csv                     # Test dataset
-│   └── sample_submission.csv        # Submission format
-│
-├── notebooks/
-│   ├── traffic_demand_prediction.ipynb   # Main solution notebook
-│   ├── exploratory_analysis.ipynb        # EDA and visualizations
-│   └── model_evaluation.ipynb            # CV & hyperparameter tuning
-│
-├── src/
-│   ├── traffic_demand_prediction.py      # Main Python script
-│   ├── data_preprocessing.py             # Data loading & cleaning
-│   ├── feature_engineering.py            # Feature creation
-│   ├── model_training.py                 # Model definitions
-│   ├── ensemble.py                       # Ensemble logic
-│   ├── submission_generator.py           # Output generation
-│   └── utils.py                          # Helper functions
-│
-├── outputs/
-│   └── submission.csv                    # Final prediction file
-│
-├── config/
-│   └── config.yaml                       # Configuration file
-│
-├── requirements.txt                       # Python dependencies
-├── run_pipeline.sh                        # One-click execution script
-├── approach_summary.txt                   # Detailed methodology
-└── README.md                              # This file
-
 ## Prerequisites
 Python 3.14.5
 
