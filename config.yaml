@@ -1,0 +1,77 @@
+data:
+  train_path: "train.csv"
+  test_path: "test.csv"
+  sample_submission_path: "sample_submission.csv"
+
+features:
+  base_features:
+    - day
+    - hour
+    - minute
+    - time_minutes
+    - hour_sin
+    - hour_cos
+    - is_rush_morning
+    - is_rush_evening
+    - is_night
+    - NumberofLanes
+    - LargeVehicles_bin
+    - Landmarks_bin
+    - Temperature
+    
+  encoded_features:
+    - RoadType_enc
+    - Weather_enc
+    - geo_prefix3_enc
+    - geo_prefix4_enc
+    - geo_prefix5_enc
+    - geohash_enc
+  
+  aggregated_features:
+    - geo_mean
+    - geo_std
+    - geo_max
+    - geo_min
+    - geo_ts_d48
+    - geo_hour_mean
+    - hour_global_mean
+    - geo4_mean
+
+models:
+  lightgbm:
+    objective: "regression"
+    metric: "rmse"
+    num_leaves: 255
+    learning_rate: 0.05
+    feature_fraction: 0.85
+    bagging_fraction: 0.85
+    bagging_freq: 5
+    min_child_samples: 20
+    reg_alpha: 0.05
+    reg_lambda: 0.1
+    n_estimators: 2000
+    random_state: 42
+    n_jobs: -1
+    early_stopping_rounds: 100
+  
+  random_forest:
+    n_estimators: 300
+    max_depth: 20
+    min_samples_leaf: 5
+    max_features: 0.7
+    random_state: 42
+    n_jobs: -1
+
+ensemble:
+  lgb_weight: 0.7
+  rf_weight: 0.3
+
+preprocessing:
+  outlier_method: "iqr"
+  outlier_iqr_multiplier: 3
+  clip_min: 0
+  clip_max: 1
+
+submission:
+  output_path: "submission.csv"
+  expected_rows: 41778
